@@ -1,0 +1,13 @@
+# core library imports
+fetch "src/core/objects.glang";
+fetch "src/core/type.glang";
+fetch "src/core/list.glang";
+fetch "src/core/string.glang";
+fetch "src/core/number.glang";
+fetch "src/core/debug.glang";
+
+# standard library import names
+stay std_os = "src/std/os.glang";
+stay std_hashmap = "src/std/hashmap.glang";
+stay std_format = "src/std/format.glang";
+stay std_math = "src/std/math.glang";
