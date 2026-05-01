@@ -1,0 +1,26 @@
+stay __LCG_A = 1664525;
+stay __LCG_C = 1013904223;
+stay __LCG_M = 4294967296;
+
+obj __lcg_seed = [_now()];
+
+# generate a "random" number using the LCG algorithm
+# returns a random float value
+func random_number() {
+    add(__lcg_seed, ((__LCG_A * get(__lcg_seed, 0) + __LCG_C) % __LCG_M));
+    remove(__lcg_seed, 0);
+
+    give get(__lcg_seed, 0) / __LCG_M;
+}
+
+# generate a "random" number between 'a' and 'b', using the LCG algorithm
+# returns a random float value between 'a' and 'b'
+func random_range(a, b) {
+    if a > b {
+        obj t = a;
+        a = b;
+        b = t;
+    }
+
+    give a + random_number() * (b - a);
+}
