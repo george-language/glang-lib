@@ -1,0 +1,13 @@
+# the elapsed time since the UNIX epoch (1/1/1970)
+# returns "now", our current moment in space and time
+func time_now() {
+    give _now();
+}
+
+# temporarily halts program execution, waiting until 'ms' has passed
+# returns null
+func time_pause(ms) {
+    obj target = time_now() + ms;
+
+    while time_now() < target {}
+}

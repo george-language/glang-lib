@@ -11,3 +11,4 @@ stay std_os = GLANG_LIB + "/src/std/os.glang";
 stay std_hashmap = GLANG_LIB + "/src/std/hashmap.glang";
 stay std_format = GLANG_LIB + "/src/std/format.glang";
 stay std_math = GLANG_LIB + "/src/std/math.glang";
+stay std_time = GLANG_LIB + "/src/std/time.glang";
