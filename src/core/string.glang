@@ -83,3 +83,69 @@ func join(string_a, string_b) {
 
     give string_a + string_b;
 }
+
+func _is_whitespace(char) {
+    if char == " " {
+        give true;
+    }
+
+    if char == "\n" {
+        give true;
+    }
+
+    if char == "\t" {
+        give true;
+    }
+
+    give false;
+}
+
+# trim the start of a string
+# returns the trimmed string
+func trim_start(str) {
+    if type(str) != "string" {
+        uhoh("argument 'str' must be type string");
+    }
+
+    obj result = "";
+    obj seen_char = false;
+
+    walk char through str {
+        if not seen_char {
+            if not _is_whitespace(char) {
+                seen_char = true;
+                result = join(result, char);
+            }
+        } otherwise {
+            result = join(result, char);
+        }
+    }
+
+    give result;
+}
+
+# trim the end of a string
+# returns the trimmed string
+func trim_end(str) {
+    if type(str) != "string" {
+        uhoh("argument 'str' must be type string");
+    }
+
+    give reverse(
+        trim_start(
+            reverse(str)
+        )
+    );
+}
+
+# trim the start and end of a string
+# returns the trimmed string
+func trim(str) {
+    if type(str) != "string" {
+        uhoh("argument 'str' must be type string");
+    }
+
+    give trim_end(
+        trim_start(str)
+    );
+}
