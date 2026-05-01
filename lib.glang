@@ -7,7 +7,7 @@ fetch "src/core/number.glang";
 fetch "src/core/debug.glang";
 
 # standard library import names
-stay std_os = "src/std/os.glang";
-stay std_hashmap = "src/std/hashmap.glang";
-stay std_format = "src/std/format.glang";
-stay std_math = "src/std/math.glang";
+stay std_os = GLANG_LIB + "/src/std/os.glang";
+stay std_hashmap = GLANG_LIB + "/src/std/hashmap.glang";
+stay std_format = GLANG_LIB + "/src/std/format.glang";
+stay std_math = GLANG_LIB + "/src/std/math.glang";
